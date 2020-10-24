@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ConutUp</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="container">
+      <p><span class="count">1500000</span> 件販売！</p>
+    </div>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+      $(".count").each(function () {
+        $(this)
+          .prop("c", 0)
+          .animate(
+            {
+              c: $(this).text(),
+            },
+            {
+              duration: 1000,
+              easing: "linear",
+              step: function (now) {
+                $(this).text(Math.ceil(now));
+              },
+            }
+          );
+      });
+    </script>
+  </body>
+</html>
